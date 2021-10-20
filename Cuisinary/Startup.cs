@@ -32,7 +32,9 @@ namespace Cuisinary
             }
 
             app.UseRouting();
-            app.UseWelcomePage();
+            app.UseWelcomePage(new WelcomePageOptions { 
+                Path= "/wp"
+            });
 
             app.UseEndpoints(endpoints =>
             {
