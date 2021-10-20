@@ -33,22 +33,20 @@ namespace Cuisinary
                 app.UseDeveloperExceptionPage();
             }
 
-            
-
             app.UseMvc(ConfigureRoutes);
-
             app.UseRouting();
 
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapGet("/", async context =>
-                {
+            //app.UseEndpoints(endpoints =>
+            //{
+            //    endpoints.MapGet("/", async context =>
+            //    {
 
-                    var greeting = greeter.GetMessageOfTheDay();
-                    //await context.Response.WriteAsync("Hello World!");
-                    await context.Response.WriteAsync(greeting + env.EnvironmentName);
-                });
-            });
+            //        var greeting = greeter.GetMessageOfTheDay();
+            //        //await context.Response.WriteAsync("Hello World!");
+            //        await context.Response.WriteAsync(greeting + env.EnvironmentName);
+            //    });
+            //});
+
         }
 
         private void ConfigureRoutes(IRouteBuilder obj)

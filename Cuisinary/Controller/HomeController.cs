@@ -10,7 +10,7 @@ namespace Cuisinary.Controller
     {
         public IActionResult Index()
         {
-            var model = "hi";
+            var model = "Hello from Controller";
 
             return new ObjectResult(model);
         }
