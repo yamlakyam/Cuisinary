@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.Configuration;
 
-namespace Cuisinary
+namespace Cuisinary.Services
 {
     public interface IGreeter
     {

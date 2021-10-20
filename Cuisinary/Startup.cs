@@ -1,3 +1,4 @@
+using Cuisinary.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -20,6 +21,7 @@ namespace Cuisinary
         {
 
             services.AddSingleton<IGreeter, Greeter>();
+            services.AddScoped<IRestaurantData, InMemoryRestaurant>();
             services.AddMvc(options=>options.EnableEndpointRouting=false);
         }
 
@@ -33,7 +35,7 @@ namespace Cuisinary
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseMvc(ConfigureRoutes);
+            app.UseMvc(ConfigureRoutes); 
             //app.UseMvc(obj=>obj.MapRoute("Default",
             //    "{controller=Home}/{action=Index}/{Id?}"));
             app.UseRouting();
