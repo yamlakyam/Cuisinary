@@ -18,7 +18,7 @@ namespace Cuisinary
         public void ConfigureServices(IServiceCollection services)
         {
 
-            services.AddSingleton<IGreeter , Greeter>();
+            services.AddSingleton<IGreeter, Greeter>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -32,6 +32,7 @@ namespace Cuisinary
             }
 
             app.UseRouting();
+            app.UseWelcomePage();
 
             app.UseEndpoints(endpoints =>
             {
