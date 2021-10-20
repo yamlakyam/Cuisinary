@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 namespace Cuisinary.Controller
 {
-
     [Route("abbout")]
     public class AboutController 
     {
