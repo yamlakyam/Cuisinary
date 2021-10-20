@@ -37,8 +37,11 @@ namespace Cuisinary.Controllers
 
         public IActionResult Details(int id)
         {
-
             var model= _restaurantData.Get(id);
+
+            if (model == null) {
+                return new ObjectResult("Couldnt Find Such restaurant");
+            }
             return new ObjectResult(model);
         }
     }
