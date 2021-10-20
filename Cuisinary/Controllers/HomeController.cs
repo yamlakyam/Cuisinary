@@ -23,19 +23,23 @@ namespace Cuisinary.Controllers
         }
         public IActionResult Index()
         {
- 
             var model1 = _restaurantData.GetAll();
-
             var model = new HomeIndexViewModel();
 
             model.CurrentMessage = _greeter.GetMessageOfTheDay();
             model.Restaurants = _restaurantData.GetAll();
 
-
             //return new ObjectResult(model);
             //return View(model);
             //return Ok(model1);
             return Ok(model);
+        }
+
+        public IActionResult Details(int id)
+        {
+
+            var model= _restaurantData.Get(id);
+            return new ObjectResult(model);
         }
     }
 }
