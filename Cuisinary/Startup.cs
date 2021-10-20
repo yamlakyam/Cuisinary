@@ -19,6 +19,7 @@ namespace Cuisinary
         {
 
             services.AddSingleton<IGreeter, Greeter>();
+            services.AddMvc(options=>options.EnableEndpointRouting=false);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -31,9 +32,9 @@ namespace Cuisinary
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseStaticFiles();
-            app.UseDefaultFiles();
+            
 
+            app.UseMvcWithDefaultRoute();
 
             app.UseRouting();
 
