@@ -6,11 +6,13 @@ using System.Threading.Tasks;
 
 namespace Cuisinary.Controller
 {
-    public class HomeController : Controller
+    public class HomeController 
     {
         public IActionResult Index()
         {
-            return View();
+            var model = "hi";
+
+            return new ObjectResult(model);
         }
     }
 }

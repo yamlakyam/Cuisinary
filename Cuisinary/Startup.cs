@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -34,7 +35,7 @@ namespace Cuisinary
 
             
 
-            app.UseMvcWithDefaultRoute();
+            app.UseMvc(ConfigureRoutes);
 
             app.UseRouting();
 
@@ -50,6 +51,10 @@ namespace Cuisinary
             });
         }
 
-     
+        private void ConfigureRoutes(IRouteBuilder obj)
+        {
+            obj.MapRoute("Default", 
+                "{controller=Home}/{action=Index}/{Id?}");
+        }
     }
 }
