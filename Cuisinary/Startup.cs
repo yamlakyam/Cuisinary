@@ -32,17 +32,15 @@ namespace Cuisinary
             }
 
             app.UseRouting();
-            app.UseWelcomePage(new WelcomePageOptions { 
-                Path= "/wp"
-            });
-
+  
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapGet("/", async context =>
                 {
+               
                     var greeting = greeter.GetMessageOfTheDay();
                     //await context.Response.WriteAsync("Hello World!");
-                    await context.Response.WriteAsync(greeting+" !!");
+                    await context.Response.WriteAsync(greeting+ env.EnvironmentName);
                 });
             });
         }
