@@ -1,13 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
-namespace Cuisinary.Controller
+namespace Cuisinary.Controllers
 {
     [Route("abbout")]
-    public class AboutController 
+    public class AboutController : Controller
     {
         public string Phone()
         {
