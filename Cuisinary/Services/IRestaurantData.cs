@@ -10,5 +10,6 @@ namespace Cuisinary.Services
     {
 
        public IEnumerable<Restaurant> GetAll();
+        public Restaurant Get(int id);
     }
 }
