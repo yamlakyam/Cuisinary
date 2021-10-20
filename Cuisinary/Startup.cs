@@ -34,13 +34,14 @@ namespace Cuisinary
             }
 
             app.UseMvc(ConfigureRoutes);
+            //app.UseMvc(obj=>obj.MapRoute("Default",
+            //    "{controller=Home}/{action=Index}/{Id?}"));
             app.UseRouting();
 
             //app.UseEndpoints(endpoints =>
             //{
             //    endpoints.MapGet("/", async context =>
             //    {
-
             //        var greeting = greeter.GetMessageOfTheDay();
             //        //await context.Response.WriteAsync("Hello World!");
             //        await context.Response.WriteAsync(greeting + env.EnvironmentName);
