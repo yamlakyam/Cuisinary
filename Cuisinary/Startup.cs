@@ -22,7 +22,7 @@ namespace Cuisinary
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, 
                               IWebHostEnvironment env, 
-                              IConfiguration configuration)//added the last parameter to read file from appsetting
+                              IGreeter greeter) //creating and injecting own Greeting service
         {
             if (env.IsDevelopment())
             {
@@ -35,9 +35,9 @@ namespace Cuisinary
             {
                 endpoints.MapGet("/", async context =>
                 {
-                    var greeting = configuration["Greeting"];
+                    var greeting = greeter.GetMessageOfTheDay();
                     //await context.Response.WriteAsync("Hello World!");
-                    await context.Response.WriteAsync(greeting+"!!");
+                    await context.Response.WriteAsync(greeting+" !!");
                 });
             });
         }

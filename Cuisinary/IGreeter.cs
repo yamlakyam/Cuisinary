@@ -2,6 +2,14 @@
 {
     public interface IGreeter
     {
-        object GetMessageOfTheDay();
+        string GetMessageOfTheDay();
+    }
+
+    public class Greeter : IGreeter
+    {
+        public string GetMessageOfTheDay()
+        {
+            return "Hello from my Greeter Service";
+        }
     }
 }
