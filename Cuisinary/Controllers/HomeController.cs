@@ -40,7 +40,8 @@ namespace Cuisinary.Controllers
             var model= _restaurantData.Get(id);
 
             if (model == null) {
-                return new ObjectResult("Couldnt Find Such restaurant");
+                //return new ObjectResult("Couldnt Find Such restaurant");
+                return RedirectToAction(nameof(Index));
             }
             return new ObjectResult(model);
         }
