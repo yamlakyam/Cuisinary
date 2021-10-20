@@ -31,8 +31,10 @@ namespace Cuisinary
                 app.UseDeveloperExceptionPage();
             }
 
-            //app.UseDefaultFiles();
             app.UseStaticFiles();
+            app.UseDefaultFiles();
+
+
             app.UseRouting();
 
             app.UseEndpoints(endpoints =>
