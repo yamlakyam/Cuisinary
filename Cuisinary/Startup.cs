@@ -22,7 +22,7 @@ namespace Cuisinary
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, 
                               IWebHostEnvironment env, 
-                              IConfiguration configuration)
+                              IConfiguration configuration)//added the last parameter to read file from appsetting
         {
             if (env.IsDevelopment())
             {
@@ -37,7 +37,7 @@ namespace Cuisinary
                 {
                     var greeting = configuration["Greeting"];
                     //await context.Response.WriteAsync("Hello World!");
-                    await context.Response.WriteAsync(greeting);
+                    await context.Response.WriteAsync(greeting+"!!");
                 });
             });
         }
