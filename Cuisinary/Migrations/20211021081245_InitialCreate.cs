@@ -19,6 +19,7 @@ namespace Cuisinary.Migrations
                 {
                     table.PrimaryKey("PK_Restaurants", x => x.Id);
                 });
+
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
