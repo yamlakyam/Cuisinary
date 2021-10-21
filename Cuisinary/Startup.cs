@@ -21,7 +21,7 @@ namespace Cuisinary
         {
 
             services.AddSingleton<IGreeter, Greeter>();
-            services.AddScoped<IRestaurantData, InMemoryRestaurant>();
+            services.AddSingleton<IRestaurantData, InMemoryRestaurant>();
             services.AddMvc(options=>options.EnableEndpointRouting=false);
         }
 

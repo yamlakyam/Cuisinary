@@ -8,7 +8,6 @@ namespace Cuisinary.Services
 {
     public class InMemoryRestaurant : IRestaurantData
     {
-
         public InMemoryRestaurant()
         {
             _restaurants = new List<Restaurant>
@@ -27,6 +26,14 @@ namespace Cuisinary.Services
         public Restaurant Get(int id)
         {
             return _restaurants.FirstOrDefault(r => r.Id == id);
+        }
+
+        public Restaurant Add(Restaurant restaurant)
+        {
+            restaurant.Id = _restaurants.Max(r => r.Id) + 1;
+            _restaurants.Add(restaurant);
+
+            return restaurant;
         }
     }
 }
