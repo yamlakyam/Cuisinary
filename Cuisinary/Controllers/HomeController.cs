@@ -64,7 +64,7 @@ namespace Cuisinary.Controllers
             newRestaurant = _restaurantData.Add(newRestaurant);
 
             //return new ObjectResult(newRestaurant);
-            return RedirectToAction(nameof(Details));
+            return RedirectToAction(nameof(Details), new {id= newRestaurant.Id});
         }
     }
 }
