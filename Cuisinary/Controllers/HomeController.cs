@@ -53,6 +53,7 @@ namespace Cuisinary.Controllers
             return View();
         }
 
+
         [HttpPost]
         public IActionResult Create(RestaurantEditModel model) {
 
@@ -62,7 +63,8 @@ namespace Cuisinary.Controllers
 
             newRestaurant = _restaurantData.Add(newRestaurant);
 
-            return new ObjectResult(newRestaurant);
+            //return new ObjectResult(newRestaurant);
+            return RedirectToAction(nameof(Details));
         }
     }
 }
