@@ -45,5 +45,11 @@ namespace Cuisinary.Controllers
             }
             return new ObjectResult(model);
         }
+
+
+        public IActionResult Create() 
+        {
+            return View();
+        }
     }
 }
